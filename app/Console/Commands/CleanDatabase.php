@@ -42,5 +42,6 @@ class CleanDatabase extends Command
         Message::twoMonthsOld()->delete();
         $this->info('Database cleaned');
         return 0;
+        
     }
 }
