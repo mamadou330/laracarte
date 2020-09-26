@@ -10,8 +10,9 @@
                     </p>
 
                     <form action="{{ route('valid_request') }}" method="POST">
-                         {{ csrf_field() }}
-
+                         {{-- {{ csrf_field() }} --}}
+                         @csrf
+                         
                          <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                               <label for="name" class="control-label">Name </label>
                               <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">

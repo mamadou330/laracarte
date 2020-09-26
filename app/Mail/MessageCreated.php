@@ -21,7 +21,7 @@ class MessageCreated extends Mailable
      */
     public function __construct(Message $msg)
     {
-        $this->msg = $msg;
+        $this->msg= $msg;
     }
 
     /**

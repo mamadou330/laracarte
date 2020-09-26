@@ -50,14 +50,13 @@ class ContactController extends Controller
         // Mail::to(config('laracarte.admin_support_email'))->send($mailable);
 
         /**Deuxieme methode */
-        $message = Message::create($request->only('name', 'email', 'message'));
-        Mail::to(config('laracarte.admin_support_email'))->send(new MessageCreated($message));
+        // $message = Message::create($request->only('name', 'email', 'message'));
+        // Mail::to(config('laracarte.admin_support_email'))->send(new MessageCreated($message));
 
         /**En utilisant les files d'attente on aura  */
-        // $message = Message::create($request->only('name', 'email', 'message'));
-        // Mail::to(config('laracarte.admin_support_email'))->queue(new MessageCreated($message));
-
-        return redirect()->route('root_path');
+        $message = Message::create($request->only('name', 'email', 'message'));
+        Mail::to(config('laracarte.admin_support_email'))->queue(new MessageCreated($message));
+        return redirect()->home();
     }
 
     /**

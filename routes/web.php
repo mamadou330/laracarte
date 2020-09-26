@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Mail\MessageCreated;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +15,19 @@ use App\Mail\MessageCreated;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('test-email', function(){
-     return  new MessageCreated('Mamadou Saliou Bah', 'masaliou20142014@gmail.com', 'Merci pour laracarte');
-});
 
-Route::get('/', [PagesController::class, 'index'])->name('root_path');
 
-Route::get('/about', [PagesController::class, 'about'])->name('about_path');
+// Route::get('/', [PagesController::class, 'index'])->name('root_path');
 
-Route::get('/contact', [ContactController::class, 'create'])->name('contact_path');
+// Route::get('/about', [PagesController::class, 'about'])->name('about_path');
+
+Route::view('/', 'pages.home')->name('home');
+Route::view('/about', 'pages.about')->name('about');
+
+Route::get('/contact', [ContactController::class, 'create'])->name('contact_create');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('valid_request');
+
+Route::redirect('/google', 'https://google.com');
 
 //Route::ressource('pages', PagesController::class);
