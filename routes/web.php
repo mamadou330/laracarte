@@ -31,3 +31,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('valid_reques
 Route::redirect('/google', 'https://google.com');
 
 //Route::ressource('pages', PagesController::class);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
