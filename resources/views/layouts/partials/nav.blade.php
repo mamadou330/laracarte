@@ -30,8 +30,21 @@
                     <li class="{{ set_active_route('contact_create')}}"><a href="{{ route('contact_create') }}">Contact</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
+                    @if (Route::has('login'))
+                         @auth
+                              <li><a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline ">Dashboard</a></li>
+                         @else
+                              <li><a href="{{ route('login') }}">Login</a></li>
+                              <li>
+                                   @if (Route::has('register'))
+                                        <a href="{{ route('register') }}">Register</a>
+                                   @endif  
+                              </li>
+                                        
+                              
+                         @endif
+                        
+                    @endif 
                
                </ul>
           </div><!--/.nav-collapse -->

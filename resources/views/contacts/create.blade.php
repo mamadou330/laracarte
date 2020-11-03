@@ -10,7 +10,6 @@
                     </p>
 
                     <form action="{{ route('valid_request') }}" method="POST">
-                         {{-- {{ csrf_field() }} --}}
                          @csrf
                          
                          <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">

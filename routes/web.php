@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Mail\MessageCreated;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ use App\Mail\MessageCreated;
 
 // Route::get('/about', [PagesController::class, 'about'])->name('about_path');
 
-Route::view('/', 'pages.home')->name('home');
+Route::view('/', 'pages.home')->name('home')->middleware('auth');
 Route::view('/about', 'pages.about')->name('about');
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact_create');
@@ -35,3 +36,11 @@ Route::redirect('/google', 'https://google.com');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//Auth::routes(['verify' => true]);
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
+//     return view('pages.home');
+// })->name('home');
+
+

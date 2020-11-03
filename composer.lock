@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "079d4478954a5248a78848a70bf7f881",
+    "content-hash": "37b5074e6dedf06b42eee824f3ddd4e6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1036,16 +1036,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "77bd46ac1729939a8db97b890a4d752dce79dc53"
+                "reference": "395d4326b04a112412368fdffb6e66809bef5c2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/77bd46ac1729939a8db97b890a4d752dce79dc53",
-                "reference": "77bd46ac1729939a8db97b890a4d752dce79dc53",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/395d4326b04a112412368fdffb6e66809bef5c2a",
+                "reference": "395d4326b04a112412368fdffb6e66809bef5c2a",
                 "shasum": ""
             },
             "require": {
@@ -1091,7 +1091,7 @@
                 "auth",
                 "laravel"
             ],
-            "time": "2020-09-22T16:14:44+00:00"
+            "time": "2020-09-29T17:35:46+00:00"
         },
         {
             "name": "laravel/framework",
